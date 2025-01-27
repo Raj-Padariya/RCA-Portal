@@ -12,6 +12,17 @@ $(document).ready(function() {
 
 
 
+// Toggle menu after login
+$(document).ready(function() {
+  var $toggleButton = $('.menu-arrow');
+  var $sidebarNav = $('.Portal-menu');
+
+  $toggleButton.on('click', function() {
+      $sidebarNav.toggleClass('open');
+      $toggleButton.toggleClass('open');
+  });
+});
+
 
 // Tabs Js
 let tabs = document.querySelector(".tabs");

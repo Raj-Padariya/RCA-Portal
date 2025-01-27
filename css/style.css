@@ -127,8 +127,8 @@ img {max-width: 100%;height: auto;}
 .reserve-seat-strip-bg {color: var(--white);display: inline-block;max-width: 210px;width: 100%;text-align: center;padding: 10px;font-size: 16px;font-weight: 600;background-size: contain;background-repeat: no-repeat;background-position: center;line-height: normal;}
 .reserve-seat-strip p {color: var(--white);text-transform: uppercase;font-weight: 500;font-size: 14px;}
 /* Portal Sidebar CSS */
-.Portal-menu {max-width: 284px;}
-.portal-logos a {display: flex;align-items: center;column-gap: 8px;background-color: var(--white);border-radius: 10px;box-shadow: 0px 2px 5px 0px #0000001A;width: 285px;justify-content: center;height: 95px;padding: 25px;}
+.Portal-menu {max-width: 284px;width: 100%;transition: 0.5s;}
+.portal-logos a {display: flex;align-items: center;column-gap: 8px;background-color: var(--white);border-radius: 10px;box-shadow: 0px 2px 5px 0px #0000001A;max-width: 285px;width: 100%;justify-content: center;height: 95px;padding: 25px;}
 .portal-logos a span {font-size: 20px;font-weight: 500;color: var(--black);letter-spacing: 2px;}
 .Portal-wrapper-main {padding: 30px;max-width: 1920px;margin: 0 auto;}
 .portal-logos {margin-bottom: 30px;}
@@ -147,6 +147,68 @@ img {max-width: 100%;height: auto;}
     display: flex;
   }
 
+.portal-main-menu li a span,
+.portal-logos a span{
+    transition: 0.1s;
+}
+.Portal-menu.open .portal-main-menu li a span{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    user-select: none;
+}
+.Portal-menu.open .portal-logos a span{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    user-select: none;
+}
+.Portal-menu.open .portal-logos a{
+    /* justify-content: start; */
+    width: auto;
+}
+.Portal-menu.open{
+    max-width: 69px;
+    width: 100%;
+}
+.Portal-menu.open .portal-nav-card{
+    display: none;
+}
+.Portal-menu.open .portal-main-menu li a{
+    justify-content: start;
+    padding: 10px;
+}
+.Portal-menu.open .portal-logos a{
+    padding: 10px;
+}
+
+.portal-nav{
+    position: relative;
+}
+  .menu-arrow{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menu-arrow img{
+    transition: 0.5s;
+  }
+.menu-arrow.open img{
+    transform: rotate(180deg);
+}
+
+.menu-arrow{
+    position: absolute;
+    right: -28px;
+    top: -10px;
+    height: 24px;
+    width: 24px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 /*  */
 .toggle {
     width: 25px;
@@ -250,7 +312,7 @@ img {max-width: 100%;height: auto;}
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(570px, 1fr));
 }
 .portal-detail-box .portal-box {border-radius: 10px;background-color: var(--white);padding: 20px;
     /* flex: 48%; */
@@ -289,15 +351,30 @@ img {max-width: 100%;height: auto;}
 .portal-course-activity-heading a {font-size: 16px;color: var(--blue-color);}
 
 /*  */
-.portal-course {display: flex;justify-content: space-between;align-items: center;column-gap: 20px;padding: 10px 25px 10px 10px;border-radius: 10px;border: 1px solid var(--black);margin-bottom: 10px;}
+.portal-course {display: flex;align-items: center;column-gap: 20px;padding: 10px 25px 10px 10px;border-radius: 10px;border: 1px solid var(--black);margin-bottom: 10px;position: relative;}
 .portal-course:last-child {margin-bottom: 0;}
 .portal-course-thumb {width: 184px;height: 98px;border-radius: 10px;overflow: hidden;}
 .portal-course-detail h3 {font-weight: 700;text-transform: capitalize;margin-bottom: 15px;}
-.portal-course-duration {display: flex;align-items: center;column-gap: 100px;margin-bottom: 15px;}
+.portal-course-duration {display: flex;align-items: center;column-gap: 40px;margin-bottom: 15px;}
 .portal-course-time {display: flex;align-items: center;justify-content: center;column-gap: 6px;background-color: rgba(var(--black-light), .1);width: 68px;border-radius: 20px;padding: 5px;}
 .portal-course-time img {width: 15px;}
 .portal-course-time span {font-size: 14px;font-weight: 500;}
 .portal-course-detail .progress {background: rgba(var(--black-light), .1);}
+.portal-course-arrow-btn{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.portal-course-arrow-btn svg{
+    max-width: 40px;
+}
+
+.portal-course-detail{
+    flex: auto;
+    max-width: 380px;
+}
+
 
 /*  */
 
@@ -312,7 +389,7 @@ img {max-width: 100%;height: auto;}
 .portal-coaching-call-day {margin: 50px 0;}
 .portal-coaching-call-day-heading {text-align: center;margin-bottom: 30px;}
 .portal-coaching-call-day-heading h2 {text-transform: uppercase;}
-.portal-coaching-call-btn {display: flex;column-gap: 15px;width: 100%;}
+.portal-coaching-call-btn {display: flex;column-gap: 15px;width: 100%;justify-content: center;}
 .portal-coaching-call-btn a {width: 215px;}
 .portal-coaching-call-btn a img {margin-right: 4px;}
 .portal-coaching-call-watch-btn {background: linear-gradient(228.73deg, rgba(52, 68, 251, 0.3) 64.15%, rgba(52, 68, 251, 0.8) 96.13%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));padding: 1px;border-radius: 10px;max-width: 335px;margin: 0 auto;}
@@ -342,6 +419,9 @@ img {max-width: 100%;height: auto;}
 /*  */
 .lunch-ads {display: flex;column-gap: 20px;}
 .lunch-ads-pic {border-radius: 10px;overflow: hidden;width: 246px;height: 190px;position: relative;flex: 60%;}
+.lunch-ads-pic a{
+    position: relative;
+}
 .lunch-ads-pic .cn-pic-portal {height: 190px;}
 .lunch-ads-content {flex: auto;}
 .portal-community-feed {height: 370px;overflow-y: scroll;}
