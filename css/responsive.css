@@ -1,0 +1,184 @@
+
+@media (max-width:767px) {
+    .portal-detail-box{
+        padding: 20px;
+    }
+    .portla-top-strip-section{
+        display: none;
+    }
+
+    .Portal-wrapper{
+        flex-direction: column;
+    }
+
+
+    .Portal-wrapper-main{
+        padding: 0;
+    }
+
+
+
+    .toggle {
+        display: block;
+    }
+
+
+    .open .toggle-icon::before {
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+        transition: .3s linear;
+        transform: rotate(90deg);
+        background-color: var(--blue-color);
+    }
+    .open .toggle-icon::after {
+        top: 0;
+        transition: .3s linear;
+        transform: rotate(0);
+        background-color: var(--blue-color);
+        width: 100%;
+    }
+    .open .toggle-icon {
+        top: 10px;
+        transition: .3s linear;
+        transform: rotate(42deg);
+        background-color: var(--blue-color);
+    }
+
+    .Portal-menu {
+        max-width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: var(--white);
+        padding: 15px;
+    }
+    .portal-logos a{
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        justify-content: start;
+        height: auto;
+        width: auto;
+    }
+    .portal-navigation{
+        background: var(--white);
+        box-shadow: none;
+        position: absolute;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        border-radius: 0;
+        z-index: 1;
+    }
+    .portal-navigation.open{
+        left: 0;
+    }
+    .portal-logos{
+        margin-bottom: 0;
+        /* padding-left: 15px; */
+    }
+    .portal-coaching-call-day{
+        margin: 30px 0;
+        padding: 0;
+    }
+    .portal-coaching-call-btn{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .portal-coaching-call-btn a {
+        width: 100%;
+    }
+    .portal-coaching-call-strip-bg{
+        padding: 10px;
+        column-gap: 10px;
+    }
+    .portal-community-feed{
+        height: auto;
+    }
+    .lunch-ads{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .lunch-ads-content p {
+        margin-bottom: 10px;
+    }
+    .lunch-ads-pic .cn-pic-portal {
+        height: auto;
+        width: 100%;
+    }
+    .lunch-ads-pic{
+        width: 100%;
+        height: auto;
+    }
+
+    .portal-marketing{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .portal-marketing-image{
+        width: 100%;
+    }
+    .portal-marketing-image img{
+        width: 100%;
+    }
+    .portal-marketing-btn {
+        margin-top: 30px;
+    }
+
+
+    .portal-course{
+        column-gap: 15px;
+        padding: 10px;    
+    }
+    .portal-course-duration{
+        column-gap: 10px;
+    }
+    .portal-course-arrow-btn svg {
+        height: 35px;
+        width: 35px;
+    }
+    .portal-course-thumb{
+        height: auto;
+    }
+
+
+
+
+/* Home top Strip */
+.portal-top-name-strip{
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    background: transparent;
+    box-shadow: none;
+    margin: 0;
+}
+
+}
+
+
+
+@media (max-width:575px){
+    .portal-detail-box{
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .your-web-branding{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .your-web-logo{
+        width: 100%;
+    }
+
+    .your-web-detail{
+        width: 100%;
+    }
+
+}
+
+
+
